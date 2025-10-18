@@ -28,6 +28,7 @@ print(WH_CordeiroPaulaBotter(theta, X))
 \references{
 \enumerate{
 \item Cordeiro, G.M., Paula, G.A. and Botter, D.A., 1994. Improved likelihood
-ratio tests for dispersion models. \emph{International Statistical Review}, pp. 257–274.
+ratio tests for dispersion models. \emph{International Statistical Review}, pp.
+257–274.
 }
 }

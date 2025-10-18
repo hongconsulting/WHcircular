@@ -13,12 +13,12 @@ HHMM.mean(x)
 The circular mean time-of-day in "HH:MM" string format.
 }
 \description{
-Computes the circular mean of times-of-day in "HH:MM" format,
-rounded to the nearest minute.
+Computes the circular mean of times-of-day in "HH:MM" format, rounded to the
+nearest minute.
 }
 \details{
-Wrapper function for \code{WH_HHMM_to_rad()},
-\code{WH_rad_mean()}, and \code{WH_rad_to_HHMM()}.
+Wrapper function for \code{WH_HHMM_to_rad()}, \code{WH_rad_mean()}, and
+\code{WH_rad_to_HHMM()}.
 }
 \examples{
 y <- c("01:00","01:15","01:30","01:45","02:00",

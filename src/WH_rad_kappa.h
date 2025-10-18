@@ -9,10 +9,9 @@
 
 //' Circular concentration
 //'
-//' Computes the von Mises concentration parameter κ of a vector
-//' of radians.
+//' Computes the von Mises concentration parameter *κ* of a vector of radians.
 //' @param theta Numeric vector of radians.
-//' @return The maximum likelihood estimate of κ.
+//' @return The maximum likelihood estimate of *κ*.
 //' @export
 // [[Rcpp::export]]
 double WH_rad_kappa(const Eigen::VectorXd &theta) {

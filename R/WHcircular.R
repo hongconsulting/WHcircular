@@ -4,34 +4,34 @@ NULL
 
 #' Periodic B-spline basis for "HH:MM" times
 #'
-#' Generates the periodic B-spline basis matrix for times-of-day in "HH:MM" string
-#' format with the specified interior knots and degree, evaluated at the values of x.
+#' Generates the periodic B-spline basis matrix for times-of-day in "HH:MM" 
+#' string format with the specified interior knots and degree, evaluated at the 
+#' values of x.
 #' @param x String vector of times in "HH:MM" format.
-#' @param knots Numeric vector of interior knot locations in hours 
-#' (boundary knots are fixed at 0 and 24). Default = 6, 12, 18.
-#' @param degree Degree of the piecewise polynomial. Default = 3.
-#' @details Wrapper function for \code{splines2::bSpline()}.
-#' @return A numeric matrix of \code{length(x)} rows and \code{length(knots)} columns.
+#' @param knots Numeric vector of interior knot locations in hours. 
+#' (boundary knots are fixed at `0` and `24`). Default = `c(6, 12, 18)`.
+#' @param degree Degree of the piecewise polynomial. Default = `3`.
+#' @details Wrapper function for `splines2::bSpline()`.
+#' @return A numeric matrix of `length(x)` rows and `length(knots)` columns.
 #' @export
-HHMM.Bspline <- function(x, knots = NULL, degree = 3) {
+HHMM.Bspline <- function(x, knots = c(6, 12, 18), degree = 3) {
   if (!requireNamespace("splines2", quietly = TRUE)) {
     stop("[HHMM.Bspline] requires package 'splines2'")
   }
   HM <- do.call(rbind, strsplit(x, ":", fixed = TRUE))
   hrs <- (as.numeric(HM[,1])*60 + as.numeric(HM[,2])) / 60
-  if (is.null(knots)) knots <- c(6, 12, 18)
-  b <- splines2::bSpline(hrs, knots = knots, degree = degree,
+  b <- splines2::bSpline(hrs, knots = knots, degree = degree, 
                          Boundary.knots = c(0, 24), periodic = TRUE, intercept = FALSE)
   return(b)
 }
 
 #' Circular mean of times-of-day in "HH:MM" format
 #'
-#' Computes the circular mean of times-of-day in "HH:MM" format,
-#' rounded to the nearest minute.
+#' Computes the circular mean of times-of-day in "HH:MM" format, rounded to the 
+#' nearest minute.
 #' @param x String vector of times-of-day in "HH:MM" format.
-#' @details Wrapper function for \code{WH_HHMM_to_rad()},
-#' \code{WH_rad_mean()}, and \code{WH_rad_to_HHMM()}.
+#' @details Wrapper function for `WH_HHMM_to_rad()`, `WH_rad_mean()`, and 
+#' `WH_rad_to_HHMM()`.
 #' @return The circular mean time-of-day in "HH:MM" string format.
 #' @examples
 #' y <- c("01:00","01:15","01:30","01:45","02:00",
@@ -44,25 +44,24 @@ HHMM.mean <- function(x) {
 
 #' Circular-linear regression with "HH:MM" outcomes
 #'
-#' Fits a circular-linear regression¹ model for time-of-day outcomes in
-#' "HH:MM" format.
+#' Fits a circular-linear regression¹ model for time-of-day outcomes in "HH:MM" 
+#' format.
 #' @param y String vector of times-of-day in "HH:MM" format.
 #' @param X.formula A model formula specifying the predictors.
 #' @param name Optional string vector of variable names.
-#' @details Wrapper function for \code{WH_HHMM_to_rad()},
-#' \code{WH_rad_to_dHHMM()}, \code{WH_rad_to_HHMM()}, and 
-#' \code{WH_reg_circlinear()}.
+#' @details Wrapper function for `WH_HHMM_to_rad()`, `WH_rad_to_dHHMM()`, 
+#' `WH_rad_to_HHMM()`, and `WH_reg_circlinear()`.
 #' @return A string matrix with columns:
 #' \itemize{
 #'   \item "": Parameter names
 #'   \item "Time (95%CI)": Parameter estimates and 95% confidence intervals
-#'   \item "p": \emph{P}-values
+#'   \item "p": *P*-values
 #' }
-#' The μ intercept is presented as a time-of-day whereas predictor coefficients
-#' are presented as signed time-of-day differences.
+#' The *μ* intercept is presented as a time-of-day whereas *β* coefficients are 
+#' presented as signed time-of-day differences.
 #' @references
-#' 1. Fisher, N.I. and Lee, A.J., 1992. Regression models for an angular response.
-#' \emph{Biometrics}, pp. 665–677.
+#' 1. Fisher, N.I. and Lee, A.J., 1992. Regression models for an angular 
+#' response. *Biometrics*, pp. 665–677.
 #' @examples
 #' y <- c("01:00","01:15","01:30","01:45","02:00",
 #'        "23:00","23:15","23:30","23:45","00:00")

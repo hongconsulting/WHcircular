@@ -3,10 +3,9 @@
 
 #' Circular concentration
 #'
-#' Computes the von Mises concentration parameter κ of a vector
-#' of radians.
+#' Computes the von Mises concentration parameter *κ* of a vector of radians.
 #' @param theta Numeric vector of radians.
-#' @return The maximum likelihood estimate of κ.
+#' @return The maximum likelihood estimate of *κ*.
 #' @export
 WH_rad_kappa <- function(theta) {
     .Call(`_WHcircular_WH_rad_kappa`, theta)
@@ -30,9 +29,9 @@ WH_rad_mean <- function(theta) {
 
 #' Circular resultant vector
 #'
-#' Computes the circular resultant vector in polar coordinates
-#' from a vector of radians. If the resultant length is
-#' smaller than \code{DBL_EPSILON}, the mean direction is set to \code{NaN}.
+#' Computes the circular resultant vector in polar coordinates from a vector of
+#' radians. If the resultant length is smaller than `DBL_EPSILON`, the mean 
+#' direction is set to `NaN`.
 #' @param theta Numeric vector of radians.
 #' @return A numeric vector of 2 elements:
 #' \itemize{
@@ -50,10 +49,11 @@ WH_rad_resultant <- function(theta) {
 #' Cordeiro–Paula–Botter¹ likelihood-ratio test.
 #' @param theta Numeric vector of radians.
 #' @param group Integer vector of group identifiers.
-#' @return \emph{P}-value of the test statistic.
+#' @return *P*-value of the test statistic.
 #' @references
 #' 1. Cordeiro, G.M., Paula, G.A. and Botter, D.A., 1994. Improved likelihood
-#' ratio tests for dispersion models. \emph{International Statistical Review}, pp. 257–274.
+#' ratio tests for dispersion models. *International Statistical Review*, pp. 
+#' 257–274.
 #' @examples
 #' y <- c("01:00","01:15","01:30","01:45","02:00",
 #'        "23:00","23:15","23:30","23:45","00:00")
@@ -67,8 +67,8 @@ WH_CordeiroPaulaBotter <- function(theta, group) {
 
 #' Convert "HH:MM" time-of-day strings to radians
 #'
-#' Converts times-of-day in "HH:MM" string format (for example, "14:00" for 2:00 PM)
-#' to radians.
+#' Converts times-of-day in "HH:MM" string format (for example, "14:00" for 
+#' 2:00 PM) to radians.
 #' @param input String vector of times in "HH:MM" format.
 #' @return A numeric vector of radians.
 #' @export
@@ -89,8 +89,9 @@ WH_int_to_rad <- function(x) {
 
 #' Convert radians to signed "HH:MM" time differences
 #'
-#' Converts radians to time-of-day differences in "HH:MM" string format,
-#' rounded to the nearest minute. Negative values are prefixed with a minus sign.
+#' Converts radians to time-of-day differences in "HH:MM" string format, 
+#' rounded to the nearest minute. Negative values are prefixed with a true 
+#' minus sign (not a hyphen-minus).
 #' @param input Numeric vector of radians.
 #' @return A string vector of signed time-of-day differences in "HH:MM" format.
 #' @export
@@ -100,8 +101,8 @@ WH_rad_to_dHHMM <- function(input) {
 
 #' Convert radians to "HH:MM" times
 #'
-#' Converts radians to times-of-day in "HH:MM" string format,
-#' rounded to the nearest minute.
+#' Converts radians to times-of-day in "HH:MM" string format, rounded to the 
+#' nearest minute.
 #' @param input Numeric vector of radians.
 #' @return A string vector of times-of-day in "HH:MM" format.
 #' @export
@@ -115,20 +116,18 @@ WH_rad_to_HHMM <- function(input) {
 #' @param y Numeric vector of radians.
 #' @param X Numeric matrix of predictors.
 #' @param tol Convergence tolerance. Default = 10⁻¹⁰.
-#' @return A \code{WH_regfit} list with elements:
+#' @return A `WH_regfit` list with elements:
 #' \itemize{
-#'   \item \code{coef}: vector of estimated coefficients, ordered as
-#'         κ, μ, \bold{β}.
-#'   \item \code{SE}: vector of estimated standard errors, ordered as
-#'         κ, μ, \bold{β}.
-#'   \item \code{p}: \emph{p}-values of the betas.
-#'   \item \code{n}: sample size.
-#'   \item \code{loglik}: maximized log-likelihood.
-#'   \item \code{vcov}: variance–covariance matrix of the betas.
+#'   \item `coef`: vector of estimated coefficients, ordered as *κ*, *μ*, ***β***.
+#'   \item `SE`: vector of estimated standard errors, ordered as *κ*, *μ*, ***β***.
+#'   \item `p`: *p*-values of the betas.
+#'   \item `n`: sample size.
+#'   \item `loglik`: maximized log-likelihood.
+#'   \item `vcov`: variance–covariance matrix of the betas.
 #' }
 #' @references
-#' 1. Fisher, N.I. and Lee, A.J., 1992. Regression models for an angular response.
-#' \emph{Biometrics}, pp. 665–677.
+#' 1. Fisher, N.I. and Lee, A.J., 1992. Regression models for an angular 
+#' response. *Biometrics*, pp. 665–677.
 #' @examples
 #' y <- c("01:00","01:15","01:30","01:45","02:00",
 #'        "23:00","23:15","23:30","23:45","00:00")

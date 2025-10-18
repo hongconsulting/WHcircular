@@ -10,9 +10,8 @@ WH_rad_kappa(theta)
 \item{theta}{Numeric vector of radians.}
 }
 \value{
-The maximum likelihood estimate of κ.
+The maximum likelihood estimate of \emph{κ}.
 }
 \description{
-Computes the von Mises concentration parameter κ of a vector
-of radians.
+Computes the von Mises concentration parameter \emph{κ} of a vector of radians.
 }

@@ -16,10 +16,8 @@ WH_reg_circlinear(y, X, tol = 1e-10)
 \value{
 A \code{WH_regfit} list with elements:
 \itemize{
-\item \code{coef}: vector of estimated coefficients, ordered as
-κ, μ, \bold{β}.
-\item \code{SE}: vector of estimated standard errors, ordered as
-κ, μ, \bold{β}.
+\item \code{coef}: vector of estimated coefficients, ordered as \emph{κ}, \emph{μ}, \emph{\strong{β}}.
+\item \code{SE}: vector of estimated standard errors, ordered as \emph{κ}, \emph{μ}, \emph{\strong{β}}.
 \item \code{p}: \emph{p}-values of the betas.
 \item \code{n}: sample size.
 \item \code{loglik}: maximized log-likelihood.
@@ -40,7 +38,7 @@ print(fit$SE)
 }
 \references{
 \enumerate{
-\item Fisher, N.I. and Lee, A.J., 1992. Regression models for an angular response.
-\emph{Biometrics}, pp. 665–677.
+\item Fisher, N.I. and Lee, A.J., 1992. Regression models for an angular
+response. \emph{Biometrics}, pp. 665–677.
 }
 }

@@ -13,6 +13,6 @@ WH_HHMM_to_rad(input)
 A numeric vector of radians.
 }
 \description{
-Converts times-of-day in "HH:MM" string format (for example, "14:00" for 2:00 PM)
-to radians.
+Converts times-of-day in "HH:MM" string format (for example, "14:00" for
+2:00 PM) to radians.
 }

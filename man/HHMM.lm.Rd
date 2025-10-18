@@ -20,17 +20,16 @@ A string matrix with columns:
 \item "Time (95\%CI)": Parameter estimates and 95\% confidence intervals
 \item "p": \emph{P}-values
 }
-The μ intercept is presented as a time-of-day whereas predictor coefficients
-are presented as signed time-of-day differences.
+The \emph{μ} intercept is presented as a time-of-day whereas \emph{β} coefficients are
+presented as signed time-of-day differences.
 }
 \description{
-Fits a circular-linear regression¹ model for time-of-day outcomes in
-"HH:MM" format.
+Fits a circular-linear regression¹ model for time-of-day outcomes in "HH:MM"
+format.
 }
 \details{
-Wrapper function for \code{WH_HHMM_to_rad()},
-\code{WH_rad_to_dHHMM()}, \code{WH_rad_to_HHMM()}, and
-\code{WH_reg_circlinear()}.
+Wrapper function for \code{WH_HHMM_to_rad()}, \code{WH_rad_to_dHHMM()},
+\code{WH_rad_to_HHMM()}, and \code{WH_reg_circlinear()}.
 }
 \examples{
 y <- c("01:00","01:15","01:30","01:45","02:00",
@@ -41,7 +40,7 @@ print(HHMM.lm(y, ~X))
 }
 \references{
 \enumerate{
-\item Fisher, N.I. and Lee, A.J., 1992. Regression models for an angular response.
-\emph{Biometrics}, pp. 665–677.
+\item Fisher, N.I. and Lee, A.J., 1992. Regression models for an angular
+response. \emph{Biometrics}, pp. 665–677.
 }
 }

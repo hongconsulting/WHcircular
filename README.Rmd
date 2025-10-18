@@ -71,7 +71,5 @@ print(WH_CordeiroPaulaBotter(theta, X))
 
 ## Further Reading
 
-1. Cordeiro, G.M., Paula, G.A. and Botter, D.A., 1994. Improved likelihood
-ratio tests for dispersion models. *International Statistical Review*, pp. 257–274.
-2. Fisher, N.I. and Lee, A.J., 1992. Regression models for an angular response.
-*Biometrics*, pp. 665–677.
+1. Cordeiro, G.M., Paula, G.A. and Botter, D.A., 1994. Improved likelihood ratio tests for dispersion models. *International Statistical Review*, pp. 257–274.
+2. Fisher, N.I. and Lee, A.J., 1992. Regression models for an angular response. *Biometrics*, pp. 665–677.

@@ -6,9 +6,9 @@
 
 //' Circular resultant vector
 //'
-//' Computes the circular resultant vector in polar coordinates
-//' from a vector of radians. If the resultant length is
-//' smaller than \code{DBL_EPSILON}, the mean direction is set to \code{NaN}.
+//' Computes the circular resultant vector in polar coordinates from a vector of
+//' radians. If the resultant length is smaller than `DBL_EPSILON`, the mean 
+//' direction is set to `NaN`.
 //' @param theta Numeric vector of radians.
 //' @return A numeric vector of 2 elements:
 //' \itemize{

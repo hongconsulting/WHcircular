@@ -13,6 +13,6 @@ WH_rad_to_HHMM(input)
 A string vector of times-of-day in "HH:MM" format.
 }
 \description{
-Converts radians to times-of-day in "HH:MM" string format,
-rounded to the nearest minute.
+Converts radians to times-of-day in "HH:MM" string format, rounded to the
+nearest minute.
 }

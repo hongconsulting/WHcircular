@@ -14,5 +14,6 @@ A string vector of signed time-of-day differences in "HH:MM" format.
 }
 \description{
 Converts radians to time-of-day differences in "HH:MM" string format,
-rounded to the nearest minute. Negative values are prefixed with a minus sign.
+rounded to the nearest minute. Negative values are prefixed with a true
+minus sign (not a hyphen-minus).
 }

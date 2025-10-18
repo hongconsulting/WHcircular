@@ -4,22 +4,23 @@
 \alias{HHMM.Bspline}
 \title{Periodic B-spline basis for "HH:MM" times}
 \usage{
-HHMM.Bspline(x, knots = NULL, degree = 3)
+HHMM.Bspline(x, knots = c(6, 12, 18), degree = 3)
 }
 \arguments{
 \item{x}{String vector of times in "HH:MM" format.}
 
-\item{knots}{Numeric vector of interior knot locations in hours
-(boundary knots are fixed at 0 and 24). Default = 6, 12, 18.}
+\item{knots}{Numeric vector of interior knot locations in hours.
+(boundary knots are fixed at \code{0} and \code{24}). Default = \code{c(6, 12, 18)}.}
 
-\item{degree}{Degree of the piecewise polynomial. Default = 3.}
+\item{degree}{Degree of the piecewise polynomial. Default = \code{3}.}
 }
 \value{
 A numeric matrix of \code{length(x)} rows and \code{length(knots)} columns.
 }
 \description{
-Generates the periodic B-spline basis matrix for times-of-day in "HH:MM" string
-format with the specified interior knots and degree, evaluated at the values of x.
+Generates the periodic B-spline basis matrix for times-of-day in "HH:MM"
+string format with the specified interior knots and degree, evaluated at the
+values of x.
 }
 \details{
 Wrapper function for \code{splines2::bSpline()}.
